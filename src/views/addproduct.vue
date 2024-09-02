@@ -5,52 +5,38 @@
       <h1 class="text-xl font-bold">Barang Rongsok</h1>
       <div class="relative">
         <button @click="toggleDropdown" class="flex items-center space-x-2">
-          <div
-            class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center"
-          >
+          <div class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
             <h1 v-if="user">
               {{
-                user?.name_awal[0].toUpperCase() +
-                user?.nama_akhir[0].toUpperCase()
-              }}
+          user?.name_awal[0].toUpperCase() +
+          user?.nama_akhir[0].toUpperCase()
+        }}
             </h1>
           </div>
-          <span v-if="user" class="text-black"
-            >{{ user.name_awal }} {{ user.nama_akhir }}</span
-          >
+          <span v-if="user" class="text-black">{{ user.name_awal }} {{ user.nama_akhir }}</span>
         </button>
-        <div
-          v-if="dropdownOpen"
-          class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"
-        >
-          <button
-          @click="logout"
-            class="rounded-lg block px-4 py-2 text-gray-700 hover:bg-blue-50"
-            >Keluar</button
-          >
+        <div v-if="dropdownOpen"
+          class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+          <button @click="logout" class="rounded-lg block px-4 py-2 text-gray-700 hover:bg-blue-50">Keluar</button>
         </div>
       </div>
     </header>
 
     <!-- Navigation -->
     <nav class="bg-blue-500 text-white p-4 flex justify-around">
-      <div class="text-center cursor-pointer"
-      @click="() => this.$router.push('beranda')">
+      <div class="text-center cursor-pointer" @click="() => this.$router.push('beranda')">
         <span class="block">🏠</span>
         <span>Beranda</span>
       </div>
-      <div class="text-center cursor-pointer"
-      @click="() => this.$router.push('halamanchat')">
+      <div class="text-center cursor-pointer" @click="() => this.$router.push('halamanchat')">
         <span class="block">💬</span>
         <span>Obrolan</span>
       </div>
-      <div class="text-center cursor-pointer"
-      @click="() => this.$router.push('halamandisukaiuser')">
+      <div class="text-center cursor-pointer" @click="() => this.$router.push('halamandisukaiuser')">
         <span class="block">❤️</span>
         <span>Disukai</span>
       </div>
-      <div class="text-center cursor-pointer"
-      @click="() => this.$router.push('halamanprofile')">
+      <div class="text-center cursor-pointer" @click="() => this.$router.push('halamanprofile')">
         <span class="block">👤</span>
         <span>Profil</span>
       </div>
@@ -59,65 +45,39 @@
     <!-- Add Product Form -->
     <div class="p-6 mt-6 max-w-4xl mx-auto bg-white rounded-lg shadow-lg flex">
       <div class="w-1/2 flex items-center justify-center">
-        <div
-          class="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg"
-        >
-          <img :src="form.url_foto" alt="" class="max-h-48"/>
+        <div class="w-full h-64 bg-gray-200 flex items-center justify-center rounded-lg">
+          <img :src="form.url_foto" alt="" class="max-h-48" />
         </div>
       </div>
       <div class="w-1/2 pl-8">
         <h2 class="text-2xl font-semibold text-blue-600 mb-6">Tambah Produk</h2>
 
         <div class="mb-4">
-          <label for="product-name" class="block text-sm text-gray-700 mb-2"
-            >Nama Produk</label
-          >
-          <input
-            id="product-name"
-            type="text"
+          <label for="product-name" class="block text-sm text-gray-700 mb-2">Nama Produk</label>
+          <input id="product-name" type="text"
             class="text-black w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-            placeholder="Besi"
-            v-model="form.nama_produk"
-          />
+            placeholder="Besi" v-model="form.nama_produk" />
         </div>
 
         <div class="mb-4">
-          <label for="product-price" class="block text-sm text-gray-700 mb-2"
-            >Harga Produk</label
-          >
-          <input
-            id="product-price"
-            type="number"
+          <label for="product-price" class="block text-sm text-gray-700 mb-2">Harga Produk</label>
+          <input id="product-price" type="number"
             class="text-black w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-            placeholder="Harga"
-            v-model="form.harga_produk"
-          />
+            placeholder="Harga" v-model="form.harga_produk" />
         </div>
 
         <div class="mb-4">
-          <label
-            for="product-description"
-            class="block text-sm text-gray-700 mb-2"
-            >Deskripsi</label
-          >
-          <input
-            id="product-description"
-            type="text"
+          <label for="product-description" class="block text-sm text-gray-700 mb-2">Deskripsi</label>
+          <input id="product-description" type="text"
             class="text-black w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-            placeholder="Barang oke"
-            v-model="form.deskripsi_produk"
-          />
+            placeholder="Barang oke" v-model="form.deskripsi_produk" />
         </div>
 
         <div class="mb-4">
-          <label for="product-category" class="block text-sm text-gray-700 mb-2"
-            >Kategori</label
-          >
-          <select
-            id="product-category"
+          <label for="product-category" class="block text-sm text-gray-700 mb-2">Kategori</label>
+          <select id="product-category"
             class="text-black w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-            v-model="form.kategori_produk"
-          >
+            v-model="form.kategori_produk">
             <option>Semua Kategori</option>
             <option>Logam</option>
             <option>Plastik</option>
@@ -126,30 +86,22 @@
         </div>
 
         <div class="mb-6">
-          <label for="product-photo" class="block text-sm text-gray-700 mb-2"
-            >Foto Produk</label
-          >
-          <input
-            id="product-photo"
-            type="file"
+          <label for="product-photo" class="block text-sm text-gray-700 mb-2">Foto Produk</label>
+          <input id="product-photo" type="file"
+          accept="image/*"
             class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
-            @change="uploadImage"
-          />
+            @change="uploadImage" />
         </div>
 
         <div class="flex justify-between">
-          <button
-          :disabled="form.url_foto.length <= 0"
-          :class="{'bg-gray-300 cursor-not-allowed': form.url_foto.length <= 0}"
-            class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200"
-            @click="createProduct"
-          >
+          <button :disabled="isFormInvalid && uploadingImage" :class="buttonClass"
+            class="text-white px-6 py-3 items-center gap-x-4 rounded-lg font-semibold flex shadow-md transition duration-200"
+            @click="createProduct">
+            <div v-if="isLoading" class="spinner border-t-4 border-blue-500"></div>
             Tambahkan
           </button>
-          <button
-          @click="() => $router.go(-1)"
-            class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-400 transition duration-200"
-          >
+          <button @click="() => $router.go(-1)"
+            class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-400 transition duration-200">
             Kembali
           </button>
         </div>
@@ -208,7 +160,26 @@ export default {
         kategori_produk: "",
         url_foto: "",
       },
+      isLoading: false,
+      uploadingImage: false
     };
+  },
+  computed: {
+    isFormInvalid() {
+      return (
+        this.form.url_foto.length <= 0 ||
+        this.form.nama_produk.length <= 0 ||
+        !this.form.harga_produk ||
+        this.form.deskripsi_produk.length <= 0 ||
+        this.form.kategori_produk.length <= 0
+      );
+    },
+    buttonClass() {
+      return {
+        'bg-gray-300 cursor-not-allowed': this.isFormInvalid || this.uploadingImage,
+        'bg-blue-600 hover:bg-blue-700': !this.isFormInvalid || !this.uploadImage,
+      };
+    },
   },
   methods: {
     toggleDropdown() {
@@ -221,6 +192,8 @@ export default {
     },
 
     async uploadImage() {
+      this.isLoading = true
+      this.uploadingImage = true
       const file = event.target.files[0];
       const timestamp = Math.floor(new Date().getTime() / 1000); // Round down to get a proper integer timestamp
       const signature = this.generateSignature(timestamp);
@@ -244,6 +217,8 @@ export default {
           console.error("Error uploading image:", error);
         }
       }
+      this.isLoading = false
+      this.uploadingImage = false
     },
     createProduct() {
       apiProductCreate(this.form)
@@ -278,5 +253,34 @@ export default {
   },
 };
 </script>
+<style scoped>
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
 
-<style scoped></style>
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 15px;
+  /* Spinner size */
+  height: 15px;
+  /* Spinner size */
+  border-width: 1px;
+  /* Border thickness */
+  border-radius: 50%;
+  /* Make it a circle */
+  border-style: solid;
+  /* Border style */
+  border-color: #e2e8f0;
+  /* Light gray color for other sides */
+  border-top-color: #3b82f6;
+  /* Blue color for the top side */
+  animation: spin 1s linear infinite;
+  /* Animation for spinning */
+}
+</style>
