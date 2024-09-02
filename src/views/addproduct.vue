@@ -180,7 +180,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { useAuthStore } from "@/stores/auth";
 import { apiProductCreate } from "@/api/product";
 import { useSwal } from "@/composables/useSwal";
@@ -201,7 +201,7 @@ export default {
       dropdownOpen: false,
       form: {
         nama_produk: "",
-        harga_produk: null as unknown as number,
+        harga_produk: null,
         deskripsi_produk: "",
         kategori_produk: "",
         url_foto: "",
@@ -212,14 +212,14 @@ export default {
     toggleDropdown() {
       this.dropdownOpen = !this.dropdownOpen;
     },
-    generateSignature(timestamp: number) {
+    generateSignature(timestamp) {
       const secret = "atOByUVlsiYPkRHXcX7SGZSuvzYs"; // Replace with your actual Cloudinary API secret
       const stringToSign = `timestamp=${timestamp}${secret}`;
       return CryptoJS.SHA1(stringToSign).toString(CryptoJS.enc.Hex);
     },
 
-    async uploadImage(event: Event) {
-      const file = (event.target as HTMLInputElement).files?.[0];
+    async uploadImage() {
+      const file = event.target.files[0];
       const timestamp = Math.floor(new Date().getTime() / 1000); // Round down to get a proper integer timestamp
       const signature = this.generateSignature(timestamp);
 

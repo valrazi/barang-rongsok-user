@@ -189,8 +189,9 @@ import { useSwal } from '@/composables/useSwal'
 export default {
   setup() {
     const { user } = storeToRefs(useAuthStore());
+    const {logout} = useAuthStore()
     return {
-      user,
+      user, logout
     };
   },
   components: {

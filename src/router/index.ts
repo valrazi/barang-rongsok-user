@@ -15,6 +15,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
       component: () => import("../views/homepage.vue"),
     },
     {
@@ -23,6 +24,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/register.vue"),
     },
     {
@@ -31,6 +34,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/login.vue"),
     },
     {
@@ -39,6 +44,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/reset.vue"),
     },
     {
@@ -47,6 +54,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/beranda.vue"),
     },
     {
@@ -55,6 +64,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/addproduct.vue"),
     },
     {
@@ -63,6 +74,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/detailbarang.vue"),
     },
     {
@@ -71,6 +84,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/halamanchat.vue"),
     },
     {
@@ -79,6 +94,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/halamanprofileuser.vue"),
     },
     {
@@ -87,6 +104,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/halamanchatuser.vue"),
     },
     {
@@ -95,6 +114,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/halamandisukaiuser.vue"),
     },
     {
@@ -103,6 +124,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      // @ts-ignore
+
       component: () => import("../views/halamanprofile.vue"),
     },
     {
