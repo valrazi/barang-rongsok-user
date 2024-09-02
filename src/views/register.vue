@@ -152,7 +152,7 @@ export default {
               });
           } else {
             useSwal().showAlert({
-              text: "Gagal Daftar",
+              text: "Gagal Daftar:" + res.message,
               icon: "error",
               title: "failed",
             });
@@ -161,7 +161,7 @@ export default {
         .catch((err) => {
           console.log(err);
           useSwal().showAlert({
-            text: "Gagal Daftar",
+            text: "Gagal Daftar: " + res.message,
             icon: "error",
             title: "failed",
           });
