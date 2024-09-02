@@ -83,12 +83,7 @@
       </div>
 
       <!-- Add Product Button -->
-      <div class="text-center mt-8">
-        <button class="bg-blue-600 text-white py-2 px-8 rounded"
-        >
-          Tambah Produk
-        </button>
-      </div>
+      
 </main>
     <!-- Footer -->
     <footer class="bg-gray-100 py-6 mt-12">
