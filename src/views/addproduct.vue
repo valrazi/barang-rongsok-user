@@ -139,6 +139,8 @@
 
         <div class="flex justify-between">
           <button
+          :disabled="form.url_foto.length <= 0"
+          :class="{'bg-gray-300 cursor-not-allowed': form.url_foto.length <= 0}"
             class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200"
             @click="createProduct"
           >
