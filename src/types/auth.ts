@@ -19,7 +19,8 @@ export interface User {
   createdAt: Date;
   updatedAt: Date;
   socket_id: null;
-  is_online: boolean
+  is_online: boolean;
+  messageUnread: number
 }
 
 export type UserRegister = {

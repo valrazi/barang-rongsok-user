@@ -99,10 +99,11 @@
           @click="() => this.$router.push('halamanprofileuser?user_id=' + i.user_id)">
             <h1>{{ `${i.name_awal[0].toUpperCase()}${i.nama_akhir[0].toUpperCase()}`}}</h1>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col w-full">
             <span 
             @click="sendChat(i.user_id)"
-            class="text-gray-700 font-semibold cursor-pointer">{{ `${i.name_awal} ${i.nama_akhir}`}} </span>
+            class="text-gray-700 font-semibold cursor-pointer w-full   flex gap-x-2">{{ `${i.name_awal} ${i.nama_akhir}`}} 
+            <span v-if="i.messageUnread > 0" class="text-xs  bg-red-400 text-white w-4 h-4 flex items-center justify-center rounded-lg">{{ i.messageUnread }}</span></span>
             <span class="text-green-500 text-sm" v-if="i.is_online">Aktif</span>
             <span class="text-red-500 text-sm" v-else>Tidak Aktif</span>
           </div>
